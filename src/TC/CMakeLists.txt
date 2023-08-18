@@ -143,8 +143,6 @@ if(PKG_CONFIG_FOUND AND (NOT WIN32)) # pkgconfig works on Windows, but can not h
     target_link_libraries(TC_CORE PUBLIC PkgConfig::LIBAV)
     try_compile(HAS_BSF ${PROJECT_BINARY_DIR} SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/has_bsf_compile_test.c LINK_LIBRARIES PkgConfig::LIBAV)
 else()
-    set(TC_FFMPEG_INCLUDE_DIR "" CACHE PATH "Where to find ffmpeg includes")
-    set(TC_FFMPEG_LIBRARY_DIR "" CACHE PATH "Where to find ffmpeg libraries")
     message(STATUS "TC_FFMPEG_INCLUDE_DIR=\"${TC_FFMPEG_INCLUDE_DIR}\"")
     message(STATUS "TC_FFMPEG_ROOT=\"${TC_FFMPEG_INCLUDE_DIR}\"")
     message(STATUS "TC_FFMPEG_LIBRARY_DIR=\"${TC_FFMPEG_LIBRARY_DIR}\"")
